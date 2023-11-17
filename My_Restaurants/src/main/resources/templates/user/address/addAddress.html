@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      lang="en" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity6">
+<head th:replace="~{fragments/head :: head}"></head>
+<body th:attr="data-bs-theme=${theme}">
+
+<!--<div th:replace="~{fragments/header :: header_body}"></div>-->
+<div th:replace="~{fragments/preloader :: preloader_body}"></div>
+<!--<div class="wrapper">
+    <div class="content">
+        <section>
+            <div class="container mt-md-5 mt-2">
+                <div th:replace="fragments/userheader :: user_header_body"></div>
+                <div class="row">
+                    <div th:replace="~{fragments/profileNavigator :: profile_navigation}"></div>
+                    <div class="col-12 col-md-9 col-lg-8 off-set-lg-1">
+                        <form th:action="@{/user/address/add}" th:object="${addressForm}" class="row" action="#"
+                              th:method="POST">
+                            <div th:replace="~{fragments/checkoutBillingForm :: checkout_billing_form}"></div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <button class="btn btn-dark" type="submit">Add Address</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>-->
+
+<main class="main__content_wrapper">
+
+    <!-- Start breadcrumb section -->
+    <section class="breadcrumb__section breadcrumb__bg">
+        <div class="container">
+            <div class="row row-cols-1">
+                <div class="col">
+                    <div class="breadcrumb__content text-center">
+                        <ul class="breadcrumb__content--menu d-flex justify-content-center">
+                            <li class="breadcrumb__content--menu__items"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb__content--menu__items"><span>My Account</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End breadcrumb section -->
+
+    <!-- my account section start -->
+    <section class="my__account--section section--padding">
+        <div class="container">
+            <div class="my__account--section__inner border-radius-10 d-flex">
+                <div class="account__left--sidebar">
+                    <h2 class="account__content--title h3 mb-20">My Profile</h2>
+                    <ul class="account__menu">
+                        <li class="account__menu--list">
+                            <a href="/profile">Dashboard</a>
+                        </li>
+                        <li class="account__menu--list active">
+                            <a href="/profile/addAddress">Addresses</a>
+                        </li>
+                        <li class="account__menu--list"><a href="#">Wishlist</a></li>
+                        <li class="account__menu--list"><a href="#">Log Out</a></li>
+                    </ul>
+                </div>
+                <div class="account__wrapper">
+                    <div class="account__content">
+                        <h2 class="account__content--title h3 mb-20">Addresses</h2>
+                        <button class="new__address--btn primary__btn mb-25" type="button">Add a new address</button>
+                        <div class="account__details two">
+                            <h3 class="account__details--title h4">Default</h3>
+                            <p class="account__details--desc">Admin <br> Dhaka <br> Dhaka 12119 <br> Bangladesh</p>
+                            <a class="account__details--link" href="my-account-2.html">View Addresses (1)</a>
+                        </div>
+                        <div class="account__details--footer d-flex">
+                            <button class="account__details--footer__btn" type="button">Edit</button>
+                            <button class="account__details--footer__btn" type="button">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- my account section end -->
+
+    <div th:replace="~{fragments/shipping :: shipping_body}"></div>
+
+</main>
+<div th:replace="~{fragments/footer :: footer_body}"></div>
+<script th:src="@{/js/script.js}"></script>
+</body>
+</html>
