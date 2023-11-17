@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <title>Pluto - Responsive Bootstrap Admin Panel Templates</title>
+        <meta name="keywords" content="">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="images/fevicon.png" type="image/png" />
+        <link rel="stylesheet" href="/form/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/form/css/style.css" />
+        <link rel="stylesheet" href="/form/css/responsive.css" />
+        <link rel="stylesheet" href="css/color_2.css" />      
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css">
+    
+<style>
+    body {
+        background-color: #FBFBFB;
+    }
+
+    .card-header {
+        background-color: #f3f3f3;
+        color: #000;
+    }
+
+    .form-group label {
+        font-weight: bold;
+    }
+
+    .btn {
+        border-radius: 30px;
+        padding: 10px 20px;
+    }
+
+    .btn i {
+        margin-right: 5px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 60px;
+        width: auto;
+        margin-right: 10px;
+    }
+
+    .card {
+        margin-top: 50px;
+        border: none;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+        background-color: #ff0800;
+        color: #fff;
+        border-radius: 0;
+    }
+
+    .card-body {
+        padding: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .form-control {
+        border-radius: 30px;
+        height: 65px;
+        font-size: 16px;
+    }
+
+    .form-text {
+        font-size: 14px;
+    }
+
+    .btn-container {
+        text-align: center;
+        margin-top: 30px;
+    }
+</style>
+
+    <section class="row" >
+            <form >
+                <div class="card"style="width:1000px;">
+                    <div class="card-header">
+                        <div class="logo">
+                           
+                            <h4 class="mb-0 text-center">Add New Category</h4>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="categoryId">Category ID:</label>
+                            <input type="hidden" name="isEdit">
+                            <input type="text" class="form-control" name="categoryId" placeholder="Enter Category ID" readonly>
+                            <small class="form-text text-muted">Category ID is required</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name">
+                            <small class="form-text text-muted">Name is required.</small>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center">
+                        <div class="btn-container">
+                            <button type="reset" class="btn btn-primary"><i class="fas fa-undo"></i> Reset</button>
+                            <a href="" class="btn btn-danger"><i class="fas fa-list"></i> List Categories</a>
+                            <button class="btn btn-success"> <i class="fas fa-save">Update</i></button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

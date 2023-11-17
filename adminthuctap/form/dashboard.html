@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <title>Admin Oderfood</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="icon" href="images/fevicon.png" type="image/png" />
+      <link rel="stylesheet" href="/form/css/bootstrap.min.css" />
+      <link rel="stylesheet" href="/form/css/style.css" />
+      <link rel="stylesheet" href="/form/css/responsive.css" />
+      <link rel="stylesheet" href="css/color_2.css" />
+      <link rel="stylesheet" href="css/bootstrap-select.css" />
+      <link rel="stylesheet" href="css/perfect-scrollbar.css" />
+      <link rel="stylesheet" href="css/custom.css" />
+      <link rel="stylesheet" href="js/semantic.min.css" />
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+      <script src="https://code.angularjs.org/1.6.9/angular-route.min.js"></script>
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/all.min.css">
+  <style>
+    .icon_info ul.user_profile_dd li>a::after {
+    color: #000000;
+    top: 13px;
+    right: 35px;
+    display: block;
+    position: absolute;
+    transform: translateY(-50%);
+    content: "\f107";
+    font-family: 'fontawesome';
+    border: none;
+    font-size: 18px;
+}
+  </style>
+   </head>
+   <body class="dashboard dashboard_2" ng-app="myApp">
+      <div class="full_container">
+         <div class="inner_container">
+             <!-- Sidebar  -->
+             <nav id="sidebar">
+                 <div class="sidebar_blog_1">
+                     <div class="sidebar-header">
+                         <div class="logo_section">
+                             <a href=""><img class="logo_icon img-responsive" src="images/logo/logo.png"
+                                     alt="#" /></a>
+                         </div>
+                     </div>
+                     <div class="sidebar_user_info">
+                         <div class="icon_setting"></div>
+                         <div class="user_profle_side">
+                             <div class="user_img"><img class="img-responsive" src="images/logo/logo.png"
+                                     height="80px" /></div>
+                             <div class="user_info">
+                                 <div >
+                                 <p>Hoàng Hữu</p>
+                             </div>
+                             <p><span class="online_animation"></span> Online</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="sidebar_blog_2">
+                 <h4>General</h4>
+                 <ul class="list-unstyled components">
+                  <li>
+                     <a href="#category" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Mange Category</span></a>
+                     <ul class="collapse list-unstyled" id="category">
+                        <li> <a href="#!addcategory"> Mange Category Add</a></li>
+                        <li><a href="#!listcategory"> Mange Category List</a></li>
+                        
+                     </ul>
+                  </li>
+                     <li class="nav-item">
+                         <a href="#!report"><i class="fa fa-table purple_color2"></i> Thống Kê</a>
+                       </li>
+                     <li>
+                        <a href="#account1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-object-group blue2_color"></i> <span>Mange Account</span></a>
+                        <ul class="collapse list-unstyled" id="account1">
+                           <li> <a href="#!addaccount"> Mange Account Add</a></li>
+                           <li><a href="#!listaccount"> Mange Account List</a></li>
+                           
+                        </ul>
+                     </li>
+                     <li>
+                         <a href="#!order"><i class="fas fa-file-invoice blue1_color"></i><span>Hóa đơn</span></a>
+                     </li>
+                    
+                     <li class="active">
+                         <a href="#additional_page" data-toggle="collapse" aria-expanded="false"
+                             class="dropdown-toggle"><i class="fa fa-clone yellow_color"></i> <span>Mange Product</span></a>
+                         <ul class="collapse list-unstyled" id="additional_page">
+                             <li>
+                             <a href="#!addproduct"><i class="fas fa-box yellow_color"></i>Mange Product Add</a>
+                             </li>
+                             <li>
+                                 <a href="#!listproduct"><i class="fas fa-box yellow_color"></i> Mange Product list</a>
+                             </li>
+                             
+                         </ul>
+                     </li>
+                     </li>
+                     <li><a href="#"><i class="fa fa-cog yellow_color"></i> <span>Settings</span></a>
+                     </li>
+                 </ul>
+             </div>
+         </nav>
+         <div id="content">
+             <div class="topbar">
+                 <nav class="navbar navbar-expand-lg">
+                     <div class="full">
+                         <button type="button" id="sidebarCollapse" class="sidebar_toggle " style="background-color: red;"><i
+                                 class="fa fa-bars"></i></button>
+                         <div class="right_topbar">
+                             <div class="icon_info">
+                                 <ul>
+                                     <li><a href="#"><i class="fas fa-bell"></i><span class="badge">2</span></a></li>
+                                     <li><a href="#"><i class="fas fa-question-circle"></i></a></li>
+                                     <li><a href="#"><i class="fas fa-envelope"></i><span class="badge">3</span></a></li>
+                                 </ul>
+                                 
+                                 <ul class="user_profile_dd">
+                                     <li style="background-color: rgb(255, 0, 0);">
+                                         <a class="dropdown-toggle" data-toggle="dropdown"><img
+                                                 class="img-responsive rounded-circle"
+                                                 src="images/logo/anh-dai-dien-FB-200.jpg" alt="#" />
+                                                 <span class="name_user"></span></a>
+                                           
+                                         <div class="dropdown-menu">
+                                             <a class="dropdown-item" href="#">My Profile</a>
+                                             <a class="dropdown-item" href="#">Settings</a>
+                                             <a class="dropdown-item" href="#">Help</a>
+                                             <a class="dropdown-item"><span>Log Out</span> <i
+                                                     class="fa fa-sign-out"></i></a>
+                                         </div>
+                                     </li>
+                                 </ul>
+                             </div>
+                         </div>
+                     </div>
+                 </nav>
+             </div>
+             <div class="col-sm-10">
+                   <div ng-view></div>
+                 </div>
+             <div class="midde_cont">
+
+             </div>
+             
+         </div>
+     </div>
+ </div>
+ <script>
+   var app = angular.module('myApp', ['ngRoute']);
+app.config(function ($routeProvider, $locationProvider) {
+ $routeProvider
+
+ .when('/', {
+          
+        })
+        .when('/addcategory', {
+            templateUrl: 'addcategory.html'
+           
+        })
+        .when('/addproduct', {
+            templateUrl: 'addproduct.html'
+           
+        })
+        .when('/listproduct', {
+            templateUrl: 'listproduct.html'
+           
+        })
+        .when('/listcategory', {
+            templateUrl: 'listcategory.html',
+
+        })
+        .when('/addaccount', {
+            templateUrl: 'addAccount.html',
+
+        })
+        .when('/listaccount', {
+            templateUrl: 'listaccount.html',
+
+        })
+        .when('/order', {
+            templateUrl: 'order.html',
+
+        })
+        .when('/orderdetail', {
+            templateUrl: 'oderdetail.html',
+
+        })
+        .when('/report', {
+            templateUrl: 'report.html',
+
+        })
+    
+});
+
+ </script>
+   </script>
+   <script src="js/jquery.min.js"></script>
+ 
+   <script src="js/bootstrap.min.js"></script>
+ 
+  
+   <script>
+       var ps = new PerfectScrollbar('#sidebar');
+   </script>
+   
+      <script src="js/custom.js"></script>
+   </body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+            background-color: #FBFBFB;
+        }
+
+        .card-header {
+            background-color: #f3f3f3;
+            color: #000;
+            border-bottom: none;
+        }
+
+        .card-body {
+            padding: 0;
+        }
+
+        .table {
+            margin-bottom: 0;
+        }
+
+        .table th,
+        .table td {
+            vertical-align: middle;
+        }
+
+        .btn {
+            border-radius: 0;
+            padding: 0.5rem 1rem;
+        }
+
+        .btn i {
+            margin-right: 5px;
+        }
+
+        .pagination {
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+  
+        <div class="col" >
+            <div class="card"style="width: 1100px !important;">
+                <div class="card-header">
+                    <h1>List of Product</h1>
+                </div>
+                <div class="card-body">
+                    <div class="row mt-2 mb-2">
+                        <div class="col">
+                            <form>
+                                <div class="form-inline float-left">
+                                    <label for="name">Name:</label>
+                                    <input type="text" class="form-control ml-2" name="name" id="name"
+                                        aria-describedby="helpId" placeholder="Name">
+                                    <button class="btn btn-outline-primary ml-2">Search</button>
+                                </div>
+                            </form>
+                            <div class="float-right">
+                                <a href="#!addproduct" class="btn btn-outline-primary">Add new
+                                    Products</a>
+                            </div>
+                        </div>
+                    </div>
+                    <table class="table table-bordered table-striped table-inverse">
+                        <thead class="thead-inverse">
+                            <tr>
+                                <th><input type="checkbox" class="form-check-input"></th>
+                                <th></th>
+                                <th style="width: 150px;">Name</th>
+                                <th>Quantity</th>
+                                <th>Unit Price</th>
+                                <th>Discount</th>
+                                <th>Category</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" class="form-check-inline"></td>
+                                <!-- <td><img src="/uploads/images/${item.image}" width="70" class="img-fluid" alt=""></td> -->
+                                <td style="width: 150px;"><img
+                                        src="images/product/tomhum.jpg" width="70"  class="img-fluid" alt="" style="margin-left: 20px;"></td>
+                                <td>Tôm hùm</td>
+                                <td>99</td>
+                                <td>2000000</td>
+                                <td>2%</td>
+                                <td>Tôm</td>
+                                <td>
+                                    <a
+                                        class="btn btn-info btn-sm"><i class="fas fa-info"></i> Info</a>
+                                    <a 
+                                        class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                                    <a
+                                        class="btn btn-primary btn-sm"><i class="fas fa-recycle"></i>
+                                        Recycle</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="form-check-inline"></td>
+                                <!-- <td><img src="/uploads/images/${item.image}" width="70" class="img-fluid" alt=""></td> -->
+                                <td style="width: 150px;"><img
+                                    src="images/product/tomhum.jpg" width="70"  class="img-fluid" alt="" style="margin-left: 20px;"></td>
+                                <td>Tôm hùm</td>
+                                <td>99</td>
+                                <td>2000000</td>
+                                <td>2%</td>
+                                <td>Tôm</td>
+                                <td>
+                                    <a
+                                        class="btn btn-info btn-sm"><i class="fas fa-info"></i> Info</a>
+                                    <a 
+                                        class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                                    <a
+                                        class="btn btn-primary btn-sm"><i class="fas fa-recycle"></i>
+                                        Recycle</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="form-check-inline"></td>
+                                <!-- <td><img src="/uploads/images/${item.image}" width="70" class="img-fluid" alt=""></td> -->
+                                <td style="width: 150px;"><img
+                                    src="images/product/tomhum.jpg" width="70"  class="img-fluid" alt="" style="margin-left: 20px;"></td>
+                                <td>Tôm hùm</td>
+                                <td>99</td>
+                                <td>2000000</td>
+                                <td>2%</td>
+                                <td>Tôm</td>
+                                <td>
+                                    <a
+                                        class="btn btn-info btn-sm"><i class="fas fa-info"></i> Info</a>
+                                    <a 
+                                        class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                                    <a
+                                        class="btn btn-primary btn-sm"><i class="fas fa-recycle"></i>
+                                        Recycle</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" class="form-check-inline"></td>
+                                <!-- <td><img src="/uploads/images/${item.image}" width="70" class="img-fluid" alt=""></td> -->
+                                <td style="width: 150px;"><img
+                                    src="images/product/tomhum.jpg" width="70"  class="img-fluid" alt="" style="margin-left: 20px;"></td>
+                                <td>Tôm hùm</td>
+                                <td>99</td>
+                                <td>2000000</td>
+                                <td>2%</td>
+                                <td>Tôm</td>
+                                <td>
+                                    <a
+                                        class="btn btn-info btn-sm"><i class="fas fa-info"></i> Info</a>
+                                    <a 
+                                        class="btn btn-danger btn-sm"><i class="fas fa-edit"></i> Edit</a>
+                                    <a
+                                        class="btn btn-primary btn-sm"><i class="fas fa-recycle"></i>
+                                        Recycle</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                  
+                </div>
+                <div class="card-footer text-muted">
+                    <form action="">
+                        <div class="form-inline float-left">
+                            <label for="size">Page Size:</label>
+                            <select name="size" id="size" class="form-control" >
+                                <option  value="5">5</option>
+                                <option  value="10">10</option>
+                                <option  value="15">15</option>
+                                <option  value="20">20</option>
+                                <option  value="30">30</option>
+                                <option  value="all">All</option>
+                            </select>
+                        </div>
+                    </form>
+                   
+                </div>
+            </div>
+        </div>
+  
+    
+</body>
+
+</html>

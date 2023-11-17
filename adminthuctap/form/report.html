@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{admin/layout.html}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lịch sử đơn hàng</title>
+</head>
+
+<body>
+<section class="row" layout:fragment="content">
+    <div class="container">
+        <h3 class="text-center my-3">Thống kê</h3>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Loại hàng</th>
+                                    <th scope="col">Số lượng bán</th>
+                                    <th scope="col">Doanh thu</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>Tôm</td>
+                                <td>40</td>
+                                <td>
+                                    <span>8000000000000000</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Cua</td>
+                                <td>20</td>
+                                <td>
+                                    <span>8000000000000000</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>cơm</td>
+                                <td>20</td>
+                                <td>
+                                    <span>8000000000000000</span>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
