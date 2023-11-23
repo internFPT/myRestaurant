@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{restaurantForm.html}">
+<head>
+<title>QUẢN LÝ MÓN</title>
+</head>
+<body>
+    <section layout:fragment="body">
+        <main>
+            <div class="container box-main">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#management-dish" role="tab"
+                            aria-controls="management-dish" aria-selected="true">Quản lý món ăn</a></li>
+                    <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#list-dish" role="tab"
+                            aria-controls="list-dish" aria-selected="false">Danh sách món ăn</a></li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+    
+                    <div class="tab-pane fade show active" id="management-dish" role="tabpanel" aria-labelledby="home-tab">
+                        <form th:action="@{/tfive/admin/dish/saveOrUpdate}" method="post"
+                              class="card container form-management" th:object="${dish}"
+                            enctype="multipart/form-data">
+                            
+                            <div class="row">
+                                <div class="box-l col-sm-7">
+                                        <input type="hidden" th:field="*{isEdit}" name="isEdit" >
+                                
+                                 
+                                    <label for="dishID" >ID Món </label>
+                          <input type="text" class="form-control" id="dishID" placeholder="ID Món"
+                          readonly th:field="*{dishID}" name="dishID" >
+                                        
+                                    <label for="name">Tên món </label>
+                                    <input th:field="*{name}" type="text" id="name" class="form-control" name="name" >
+
+                                    <label for="price">Giá </label>
+                                    <div class="input-group form-group">
+                                        <input th:field="*{price}" type="number" id="price" class="form-control" name="price" >
+                                        <span class="input-group-text">$</span>
+                                    </div>
+
+                                    <label for="categoryID">Danh mục món</label>
+                                    <select class="form-control" name="ccategoriesID" id="categoryID" th:field="*{categoryID}">
+                                        <option th:each="item : ${categories}" th:value="${item.categoryID}"
+                                                th:text="${item.name}" th:selected="${item.categoryID == dish.categoryID}">Category Name</option>
+
+                                    </select>
+                                
+                                    <label for="status">Trạng Thái</label>
+                                    <select class="form-control" name="status" id="status" th:field="*{status}">
+                                        <option value="1">Còn món</option>
+                                        <option value="0">Tạm hết</option>
+
+
+                                    </select>
+
+                                    <label for="description" class="w-100">Mô tả của món
+                                    </label>
+                                    <textarea th:field="*{description}" class="w-100" id="description" rows="4" name="description"></textarea>
+                                </div>
+    
+                                <div class="box-r col-sm-5">
+                                    <script>
+                                        function chooseFile(fileInput) {
+                                            if (fileInput.files
+                                                && fileInput.files[0]) {
+                                                var reader = new FileReader();
+                                                reader.onload = function (e) {
+                                                    $('#image').attr(
+                                                        'src',
+                                                        e.target.result);
+                                                }
+    
+                                                reader
+                                                    .readAsDataURL(fileInput.files[0])
+                                            }
+                                        }
+                                    </script>
+                                   
+                                    <div class="box-img">
+                                     
+                                        
+                                         <img id="image" th:src="${dish.img != null ? '/assets/img/uploads/' + dish.img : '/assets/img/product/main-product/product1.webp'}" width="80%" alt="">
+
+                                            <input type="file" onchange="chooseFile(this)" name="imageFile"
+                                               id="img" placeholder="productImage">
+                                           
+                                    </div>
+                                     
+
+                               
+                                </div>
+    
+                            </div>
+    
+
+
+                            <div class="box-btn">
+
+                                <button class="btn btn-info" th:text="${dish.isEdit? 'Update' : 'Save'}">Save</button>
+                                <a><button th:if="${dish.isEdit==false}" type="reset" class="btn btn-primary" >Reset</button></a>
+                                <a th:if="${dish.isEdit==true}" type="button" class="btn btn-primary" th:href="@{/tfive/admin/dish/view}">Reset</a>
+                                <a style="background-color:#ED1D24" th:if="${dish.isEdit==true}" type="button" class="btn btn-primary" th:href="@{'/tfive/admin/dish/delete/' + ${dish.dishID}}">Delete</a>
+
+                            </div>
+                        </form>
+                    </div>
+    
+                    <div class="tab-pane fade" id="list-dish" role="tabpanel" aria-labelledby="profile-tab">
+                        <table class="table tbl-cart">
+                            <thead class="thead-light">
+                                <tr>
+                                    <th scope="col">Ảnh món</th>
+                                    <th scope="col">ID Món</th>
+                                    <th scope="col">Tên món</th>
+                                    <th scope="col">Giá</th>
+                                    <th scope="col">Danh mục</th>
+                                    <th scope="col">Trạng thái</th>
+                                    <th scope="col">Thao tác</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="item : ${dishes}">
+                                    <td scope="row"><img th:src="${item.img != null ? '/assets/img/uploads/' + item.img : '/assets/img/product/main-product/product1.webp'}"  width="100" height="60"/></td>
+                                   
+                                        
+                                    <td scope="row" th:text="${item.dishID}"></td>
+                                    <td scope="row" th:text="${item.name}"></td>
+                                    <td th:text="${#numbers.formatDecimal(item.price, 0, 'COMMA', 0, 'POINT')} + ' VNĐ'"></td>
+                                    <td th:text="${item.category.name}"></td>
+                                    <td th:text="${item.status == true ? 'Còn món' : 'Hết món'}"></td>
+                                    <td><a class="edit" th:href="@{'/tfive/admin/dish/edit/' + ${item.dishID}}">Edit</a>
+                                        | <a th:href="@{'/tfive/admin/dish/delete/' + ${item.dishID}}">Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+    
+            </div>
+    
+        </main>
+        
+    </section>
+
+</body>
+
+</html>
